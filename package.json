@@ -1,0 +1,35 @@
+{
+  "name": "book.jirengu.com-fe2",
+  "version": "1.0.0",
+  "description": "饥人谷前端课件v2",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "directory-tree": "^1.1.0",
+    "gitbook-plugin-jsbin": "0.0.12",
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-toggle-chapters": "^0.0.3",
+    "grunt": "^0.4.5",
+    "gulp": "^3.9.0",
+    "gulp-shell": "^0.5.1",
+    "requirejs": "^2.1.22"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "scripts": {
+    "build": "gitbook build && rm -rf _book/preview && cp -rf preview _book/preview &&  exit 0",
+    "upload": "cd _book; git init; git remote add origin git@github.com:jirengu/book2.git; git add .; git commit -am \"init\"; git push -f origin master;",
+    "uploadSrc": "git add . ; git commit -am \"upload\" ; git push -f origin master ",
+    "start": "npm run build; npm run upload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jirengu/jirengu-fe-course.git.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jirengu/jirengu-fe-course.git/issues"
+  },
+  "homepage": "https://github.com/jirengu/jirengu-fe-course.git#readme"
+}
